@@ -1,15 +1,18 @@
-Source: template-repository
-Section: unknown
+Source: isochron
+Section: utils
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Vladimir Oltean <olteanv@gmail.com>
+Build-Depends: debhelper-compat (= 12), pkg-config, libmnl-dev, pandoc
+Standards-Version: 4.6.0.1
+Rules-Requires-Root: no
+Homepage: https://github.com/vladimiroltean/isochron
 
-Package: template-repository
-Architecture: any
+Package: isochron
+Architecture: linux-any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: Tool for Time Sensitive Networking testing
+ The isochron program is a real-time application for testing Time Sensitive
+ Networking equipment. It works by monitoring the network synchronization
+ status and sending time-triggered Ethernet packets. It has a server-client
+ architecture and it measures network latency by taking multiple timestamps
+ (some hardware, some software) along the path of the packets.
